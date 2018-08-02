@@ -1,0 +1,8 @@
+@mixin flex($direction:row, $alignItems: stretch, $justifyContent: space-between, $basis: auto,$wrap:nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  flex-basis: $basis;
+  flex-wrap: $wrap;
+}

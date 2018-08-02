@@ -1,0 +1,38 @@
+$navigationHeight: 58px;
+
+.navigation_ {
+  &bar {
+    height: $navigationHeight;
+    line-height: $navigationHeight;
+    flex-shrink: 0;
+    padding: 0 15px;
+    @include flex($alignItems: center);
+  }
+
+  &back {
+    height: $navigationHeight;
+    position: relative;
+    line-height: $navigationHeight;
+    font-size: 16px;
+    color: $primaryColor;
+    @include flex($alignItems: stretch);
+
+    .arrow{
+      position: relative;
+      top: -4px;
+      left: -16px;
+    }
+  }
+
+  &title {
+    flex-grow: 1;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.refresh {
+  padding: 0;
+  font-size: 16px;
+  color: $primaryColor;
+}

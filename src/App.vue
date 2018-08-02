@@ -1,16 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <navigation-bar title="我是标题" :refresh="refresh"></navigation-bar>
+    <router-view></router-view>
+    <tab-bar></tab-bar>
   </div>
 </template>
-
 <script>
+import TabBar from "@/views/layout/TabBar";
+import NavigationBar from "@/views/layout/NavigationBar";
 export default {
-  name: 'App'
+  components: {
+    'navigation-bar': NavigationBar,
+    'tab-bar':TabBar,
+  },
+  methods:{
+    refresh(){
+      console.log('refresh success');
+    }
+  }
 }
 </script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
