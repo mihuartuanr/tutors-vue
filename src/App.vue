@@ -1,32 +1,58 @@
 <template>
   <div id="app">
-    <navigation-bar title="我是标题" :refresh="refresh"></navigation-bar>
-    <router-view></router-view>
-    <tab-bar></tab-bar>
+    <navigation-bar class="header" title="我是标题" :refresh="refresh"></navigation-bar>
+    <router-view class='main-context'></router-view>
+    <tab-bar class="footer" :tabBars="tabBars"></tab-bar>
   </div>
 </template>
 <script>
 import TabBar from "@/views/layout/TabBar";
 import NavigationBar from "@/views/layout/NavigationBar";
-export default {
-  components: {
-    'navigation-bar': NavigationBar,
-    'tab-bar':TabBar,
+const tabBars = [
+  {
+    label: "提交",
+    eventType: "click",
+    disabled: false,
+    callBack(vm) {
+      console.log("点击，提交");
+    }
   },
-  methods:{
-    refresh(){
-      console.log('refresh success');
+  {
+    label: "取消",
+    eventType: "dblclick",
+    disabled: false,
+    callBack(vm) {
+      console.log("双击，取消");
     }
   }
-}
+];
+export default {
+  data() {
+    return {
+      tabBars
+    };
+  },
+  components: {
+    "navigation-bar": NavigationBar,
+    "tab-bar": TabBar
+  },
+  methods: {
+    refresh() {
+      console.log("refresh success");
+    }
+  }
+};
 </script>
-<style>
+<style lang="scss" scoped>
+@import "@/styles/mixins.scss";
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  @include flex($direction: column);
+}
+
+.main-context {
+  flex-grow: 1;
+  overflow: hidden;
+  overflow-y: auto;
 }
 </style>

@@ -1,0 +1,35 @@
+$barHeight: 50px!default;
+
+.tab-bar{
+  height: $barHeight;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  @include flex();
+}
+
+.tab-button{
+  flex-basis: 100px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.tab-button{
+
+  .tab-label{
+    border: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    background: $primaryColor;
+    line-height: $barHeight;
+
+    &.disabled{
+      opacity: .2;
+      color: $primaryColor;
+      background: transparent;
+    }
+  }
+}
