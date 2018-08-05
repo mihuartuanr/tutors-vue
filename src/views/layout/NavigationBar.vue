@@ -19,7 +19,7 @@
     props: ['title', 'refresh'],
     computed: {
       hasTitle() {
-        return this.title && this.title.trim();
+        return !!(this.title && this.title.trim());
       },
     },
     methods: {
