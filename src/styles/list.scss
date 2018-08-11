@@ -1,0 +1,26 @@
+.list- {
+  &item {
+    box-sizing: border-box;
+    padding: 0 16px;
+  }
+}
+
+.item- {
+  &name {
+    margin-bottom: 10px;
+  }
+
+  &row {
+    @include flex();
+    line-height: 2;
+  }
+
+  &col {
+    display: block;
+
+    &:first-child {
+      text-align: justify;
+
+    }
+  }
+}

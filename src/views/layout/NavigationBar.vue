@@ -33,8 +33,8 @@
   }
 </script>
 <style lang="scss" scoped>
-@import "@/styles/constants.scss";
-@import "@/styles/mixins.scss";
+@import "@/styles/index.scss";
+
 @import "@/styles/navigation-bar.scss";
 </style>
 

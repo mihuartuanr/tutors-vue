@@ -44,8 +44,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@/styles/mixins.scss";
-
+@import "@/styles/index.scss";
 #app {
   @include flex($direction: column);
 }
