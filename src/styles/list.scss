@@ -2,25 +2,68 @@
   &item {
     box-sizing: border-box;
     padding: 0 16px;
+    margin-bottom: 15px;
   }
 }
 
 .item- {
   &name {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   &row {
-    @include flex();
-    line-height: 2;
+    @include flex($justifyContent: flex-start);
+    margin-bottom: 2px;
+
+    &:last-of-type{
+      margin-bottom: 6px;
+    }
+
+    .item-col {
+      flex-shrink: 0;
+      display: block;
+
+      &:first-child {
+        flex-basis: 70px;
+        text-align: justify;
+        text-align-last: justify;
+
+        &::after {
+          content: "：";
+        }
+      }
+
+      &:last-child {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.taskbases {
+  padding: 10px;
+  background: #eaeaea;
+  box-sizing: border-box;
+}
+
+.taskbase- {
+  &item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  &col {
-    display: block;
+  &row {
+    .info {
+      @include flex();
+      margin-bottom: 4px;
+    }
 
-    &:first-child {
-      text-align: justify;
-
+    .commet{
+      color: $infoColor;
+      font-size: 12px;
     }
   }
 }
